@@ -1369,7 +1369,7 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 	{
 		nSubsidy = 1500 * COIN; // initial block reward
 	}
-    else //if (nHeight > 50000)
+    else if (nHeight > 50000)
     {
         nSubsidy = 100 * COIN;
     }
@@ -1385,7 +1385,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 	{
 		nSubsidy = 1500 * COIN; // DPOS
 	}
-	else //if (pindexBest->nHeight+1 > 50000)
+	else if (pindexBest->nHeight+1 > 50000)
 	{
 		nSubsidy = 250 * COIN; // Pure POS
 	}
